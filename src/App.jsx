@@ -4,9 +4,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <h1>Hello World</h1>
+      <p>This is my final triple ten project!</p>
+    </>
+  );
 }
 
 export default App;
