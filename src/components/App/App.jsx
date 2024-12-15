@@ -5,16 +5,17 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Main from "../Main/Main";
+import Profile from "../Profile/Profile";
 
 function App() {
   return (
     <>
       <div className="app">
         <Header />
-        <h1>Hello lily</h1>
-        <p>This is my final triple ten project!</p>
         <Routes>
-          <Route></Route>
+          <Route path="/" element={<Main />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </div>
