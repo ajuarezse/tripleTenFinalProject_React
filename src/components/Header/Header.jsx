@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //import { useContext } from "react";
 //import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
-function Header({ handleRegisterModal }) {
+function Header({ handleRegisterModal, handleLoginModal }) {
   return (
     <header className="header">
       <Link to="/">
@@ -19,7 +19,13 @@ function Header({ handleRegisterModal }) {
         >
           Sign Up
         </button>
-        <button className="header__auth-link">Log In</button>
+        <button
+          type="button"
+          className="header__auth-link"
+          onClick={handleLoginModal}
+        >
+          Log In
+        </button>
       </div>
     </header>
   );

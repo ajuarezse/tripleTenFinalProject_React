@@ -9,6 +9,7 @@ import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -18,6 +19,11 @@ function App() {
     setActiveModal("register");
   };
 
+  const handleLoginModal = (e) => {
+    e.preventDefault();
+    setActiveModal("login");
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -25,7 +31,10 @@ function App() {
   return (
     <>
       <div className="app">
-        <Header handleRegisterModal={handleRegisterModal} />
+        <Header
+          handleRegisterModal={handleRegisterModal}
+          handleLoginModal={handleLoginModal}
+        />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/profile" element={<Profile />} />
@@ -36,6 +45,10 @@ function App() {
         isOpen={activeModal === "register"}
         onClose={closeActiveModal}
       />
+      <LoginModal
+        isOpen={activeModal === "login"}
+        onClose={closeActiveModal}
+      ></LoginModal>
     </>
   );
 }

@@ -7,7 +7,48 @@ const RegisterModal = ({ isOpen, onClose }) => {
       onClose={onClose}
       title="Sign Up"
       buttonText="Sign Up"
-    ></ModalWithForm>
+    >
+      <label htmlFor="register-name">
+        Name*
+        <input
+          type="text"
+          name="name"
+          id="register-name"
+          placeholder="Name"
+          className="modal__input"
+        />
+      </label>
+      <label htmlFor="register-email">
+        Email*
+        <input
+          type="email"
+          //ref={emailRef}
+          name="email"
+          id="register-email"
+          placeholder="Email"
+          //value={userEmail}
+          className="modal__input"
+        />
+      </label>
+      <label htmlFor="register-password">
+        Password*
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          className="modal__input"
+        />
+      </label>
+      <div className="modal__button-container">
+        <button className="modal__submit" type="submit">
+          Sign Up
+        </button>
+        <button className="modal__switch-button" type="button">
+          or Log In
+        </button>
+      </div>
+    </ModalWithForm>
   );
 };
 
