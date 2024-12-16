@@ -1,4 +1,4 @@
-[
+export const mockLyrics = [
   {
     id: 1,
     title: "The Harvest Song",
