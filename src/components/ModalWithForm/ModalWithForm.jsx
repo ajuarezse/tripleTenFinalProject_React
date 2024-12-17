@@ -19,12 +19,24 @@ function ModalWithForm({ isOpen, onClose, title, children }) {
     };
   }, [isOpen, onClose]);
 
+  const handleOverlayClick = (e) => {
+    if (
+      modalContentRef.current &&
+      !modalContentRef.current.contains(e.target)
+    ) {
+      onClose();
+    }
+  };
+
   if (!isOpen) {
     return null;
   }
   return (
-    <div className={`modal ${isOpen && "modal__opened"}`}>
-      <div className="modal__content">
+    <div
+      className={`modal ${isOpen && "modal__opened"}`}
+      onClick={handleOverlayClick}
+    >
+      <div className="modal__content" ref={modalContentRef}>
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
           <img
