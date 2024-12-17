@@ -1,12 +1,23 @@
+import React from "react";
 import "./Main.css";
+import { mockLyrics } from "../../data/mockLyrics";
+import ItemCard from "../ItemCard/ItemCard"; // Import ItemCard component
 
-function Main() {
+function Main({ likedSongs, onLike }) {
   return (
-    <main>
-      <section className="cards">
-        <p className="cards__text"> Hi Lily! Look at the Main Page!</p>
-        <ul className="cards__list"></ul>
-      </section>
+    <main className="main">
+      <h1>All Songs</h1>
+      <div className="main__songs-list">
+        {mockLyrics.map((song) => (
+          <ItemCard
+            key={song.id}
+            title={song.title}
+            lyrics={song.verses[0].text} // Display first verse as preview
+            isLiked={!!likedSongs[song.id]} // Check if the song is liked
+            onLike={() => onLike(song.id)} // Pass like handler
+          />
+        ))}
+      </div>
     </main>
   );
 }

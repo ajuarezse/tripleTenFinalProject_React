@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-//import { useState } from "react";
-//import reactLogo from "./assets/react.svg";
-//import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -13,6 +10,7 @@ import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
+  const [likedSongs, setLikedSongs] = useState({}); // Centralized state for liked songs
 
   const handleRegisterModal = (e) => {
     e.preventDefault();
@@ -28,6 +26,14 @@ function App() {
     setActiveModal("");
   };
 
+  // Function to toggle likes
+  const handleLike = (id) => {
+    setLikedSongs((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
     <>
       <div className="app">
@@ -36,8 +42,14 @@ function App() {
           handleLoginModal={handleLoginModal}
         />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/"
+            element={<Main likedSongs={likedSongs} onLike={handleLike} />}
+          />
+          <Route
+            path="/profile"
+            element={<Profile likedSongs={likedSongs} />}
+          />
         </Routes>
         <Footer />
       </div>
@@ -45,10 +57,7 @@ function App() {
         isOpen={activeModal === "register"}
         onClose={closeActiveModal}
       />
-      <LoginModal
-        isOpen={activeModal === "login"}
-        onClose={closeActiveModal}
-      ></LoginModal>
+      <LoginModal isOpen={activeModal === "login"} onClose={closeActiveModal} />
     </>
   );
 }
