@@ -1,7 +1,24 @@
+import React, { useEffect, useRef } from "react";
 import "./ModalWithForm.css";
 import closeButton from "../../assets/closeButton.png";
 
 function ModalWithForm({ isOpen, onClose, title, children }) {
+  const modalContentRef = useRef(null);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) {
     return null;
   }
