@@ -5,11 +5,11 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
+import About from "../About/About";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import { use } from "react";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -68,6 +68,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/about" element={<About />} />
           </Routes>
           <Footer />
         </div>
