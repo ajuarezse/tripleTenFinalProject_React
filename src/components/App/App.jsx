@@ -7,6 +7,7 @@ import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -53,7 +54,11 @@ function App() {
           />
           <Route
             path="/profile"
-            element={<Profile likedSongs={likedSongs} />}
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <Profile likedSongs={likedSongs} />
+              </ProtectedRoute>
+            }
           />
         </Routes>
         <Footer />
