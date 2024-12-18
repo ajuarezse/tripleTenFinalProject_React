@@ -6,7 +6,7 @@ import Navigation from "../Navigation/Navigation";
 //import { useContext } from "react";
 //import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
-function Header({ handleRegisterModal, handleLoginModal }) {
+function Header({ handleRegisterModal, handleLoginModal, handleLogOut }) {
   return (
     <header className="header">
       <Link to="/">
@@ -34,6 +34,7 @@ function Header({ handleRegisterModal, handleLoginModal }) {
         <Navigation
           handleLoginModal={handleLoginModal}
           handleRegisterModal={handleRegisterModal}
+          handleLogOut={handleLogOut}
         />
       </section>
     </header>

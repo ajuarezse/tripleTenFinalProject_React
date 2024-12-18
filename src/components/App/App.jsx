@@ -40,11 +40,24 @@ function App() {
     closeActiveModal();
   };
 
+  const handleLogIn = () => {
+    //temp for simulating login
+    //todo: pass real user objects for backend stage
+    setCurrentUser(true);
+    navigate("/profile");
+    closeActiveModal();
+  };
+
   const handleLike = (id) => {
     setLikedSongs((prev) => ({
       ...prev,
       [id]: !prev[id],
     }));
+  };
+
+  const handleLogOut = () => {
+    setCurrentUser(null);
+    navigate("/");
   };
 
   return (
@@ -54,6 +67,7 @@ function App() {
           <Header
             handleRegisterModal={handleRegisterModal}
             handleLoginModal={handleLoginModal}
+            handleLogOut={handleLogOut}
           />
           <Routes>
             <Route
@@ -76,10 +90,13 @@ function App() {
           isOpen={activeModal === "register"}
           onClose={closeActiveModal}
           onSignUp={handleSignUp}
+          handleLoginModal={handleLoginModal}
         />
         <LoginModal
           isOpen={activeModal === "login"}
           onClose={closeActiveModal}
+          handleRegisterModal={handleRegisterModal}
+          onLogIn={handleLogIn}
         />
       </CurrentUserContext.Provider>
     </>

@@ -1,7 +1,7 @@
 import "./Navigation.css";
-//import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Navigation({ handleRegisterModal, handleLoginModal }) {
+function Navigation({ handleRegisterModal, handleLoginModal, handleLogOut }) {
   return (
     <nav className="navigation">
       <button
@@ -18,16 +18,20 @@ function Navigation({ handleRegisterModal, handleLoginModal }) {
       >
         Log In
       </button>
-      <button type="button" className="navigation__button">
+      <Link to="/" className="navigation__button">
         Main
-      </button>
+      </Link>
       <button type="button" className="navigation__button">
         Profile
       </button>
-      <button type="button" className="navigation__button">
+      <Link to="/about" className="navigation__button">
         About
-      </button>
-      <button type="button" className="navigation__button">
+      </Link>
+      <button
+        type="button"
+        onClick={handleLogOut}
+        className="navigation__button"
+      >
         Log Out
       </button>
     </nav>

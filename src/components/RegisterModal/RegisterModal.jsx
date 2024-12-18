@@ -1,6 +1,6 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
+const RegisterModal = ({ isOpen, onClose, onSignUp, handleLoginModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSignUp();
@@ -22,6 +22,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           id="register-name"
           placeholder="Name"
           className="modal__input"
+          required
         />
       </label>
       <label htmlFor="register-email">
@@ -34,6 +35,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           placeholder="Email"
           //value={userEmail}
           className="modal__input"
+          required
         />
       </label>
       <label htmlFor="register-password">
@@ -44,6 +46,8 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           id="register-password"
           placeholder="Password"
           className="modal__input"
+          j
+          required
         />
       </label>
       <label htmlFor="register-confirm-password">
@@ -54,13 +58,18 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           id="register-confirm-password"
           placeholder="Confirm Password"
           className="modal__input"
+          required
         />
       </label>
       <div className="modal__button-container">
         <button className="modal__submit" type="submit">
           Sign Up
         </button>
-        <button className="modal__switch-button" type="button">
+        <button
+          className="modal__switch-button"
+          onClick={handleLoginModal}
+          type="button"
+        >
           or Log In
         </button>
       </div>

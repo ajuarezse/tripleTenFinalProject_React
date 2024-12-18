@@ -1,12 +1,17 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const LoginModal = ({ isOpen, onClose }) => {
+const LoginModal = ({ isOpen, onClose, handleRegisterModal, onLogIn }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onLogIn();
+  };
   return (
     <ModalWithForm
       isOpen={isOpen}
       onClose={onClose}
       title="Log In"
       buttonText="Log In"
+      onSubmit={handleSubmit}
     >
       <label htmlFor="login-email">
         Email
@@ -27,13 +32,18 @@ const LoginModal = ({ isOpen, onClose }) => {
           id="login-password"
           className="modal__input"
           placeholder="Password"
+          required
         />
       </label>
       <div className="modal__button-container">
         <button className="modal__submit" type="submit">
           Log In
         </button>
-        <button className="modal__switch-button" type="button">
+        <button
+          className="modal__switch-button"
+          onClick={handleRegisterModal}
+          type="button"
+        >
           or Sign Up
         </button>
       </div>
