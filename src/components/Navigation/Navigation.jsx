@@ -1,7 +1,20 @@
 import "./Navigation.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Navigation({ handleRegisterModal, handleLoginModal, handleLogOut }) {
+  const navigate = useNavigate();
+  const currentUser = useContext(CurrentUserContext);
+
+  const handleProfileClick = (e) => {
+    if (currentUser) {
+      navigate("/profile");
+    } else {
+      handleLoginModal(e);
+    }
+  };
+
   return (
     <nav className="navigation">
       <button
@@ -21,7 +34,11 @@ function Navigation({ handleRegisterModal, handleLoginModal, handleLogOut }) {
       <Link to="/" className="navigation__button">
         Main
       </Link>
-      <button type="button" className="navigation__button">
+      <button
+        type="button"
+        className="navigation__button"
+        onClick={handleProfileClick}
+      >
         Profile
       </button>
       <Link to="/about" className="navigation__button">
