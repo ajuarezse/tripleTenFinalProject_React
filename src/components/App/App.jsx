@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -8,11 +8,15 @@ import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import { use } from "react";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [likedSongs, setLikedSongs] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const navigate = useNavigate();
 
   const handleRegisterModal = (e) => {
     e.preventDefault();
@@ -29,8 +33,11 @@ function App() {
   };
 
   const handleSignUp = () => {
-    setIsLoggedIn(true);
-    closeActiveModal;
+    //temp for simulating login
+    //todo: pass real user objects for backend stage
+    setCurrentUser(true);
+    navigate("/profile");
+    closeActiveModal();
   };
 
   const handleLike = (id) => {
@@ -42,32 +49,38 @@ function App() {
 
   return (
     <>
-      <div className="app">
-        <Header
-          handleRegisterModal={handleRegisterModal}
-          handleLoginModal={handleLoginModal}
+      <CurrentUserContext.Provider value={currentUser}>
+        <div className="app">
+          <Header
+            handleRegisterModal={handleRegisterModal}
+            handleLoginModal={handleLoginModal}
+          />
+          <Routes>
+            <Route
+              path="/"
+              element={<Main likedSongs={likedSongs} onLike={handleLike} />}
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute currentUser={currentUser}>
+                  <Profile likedSongs={likedSongs} />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+          <Footer />
+        </div>
+        <RegisterModal
+          isOpen={activeModal === "register"}
+          onClose={closeActiveModal}
+          onSignUp={handleSignUp}
         />
-        <Routes>
-          <Route
-            path="/"
-            element={<Main likedSongs={likedSongs} onLike={handleLike} />}
-          />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Profile likedSongs={likedSongs} />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-        <Footer />
-      </div>
-      <RegisterModal
-        isOpen={activeModal === "register"}
-        onClose={closeActiveModal}
-      />
-      <LoginModal isOpen={activeModal === "login"} onClose={closeActiveModal} />
+        <LoginModal
+          isOpen={activeModal === "login"}
+          onClose={closeActiveModal}
+        />
+      </CurrentUserContext.Provider>
     </>
   );
 }

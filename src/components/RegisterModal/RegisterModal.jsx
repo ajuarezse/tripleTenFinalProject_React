@@ -1,12 +1,18 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const RegisterModal = ({ isOpen, onClose }) => {
+const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSignUp();
+  };
+
   return (
     <ModalWithForm
       isOpen={isOpen}
       onClose={onClose}
       title="Sign Up"
       buttonText="Sign Up"
+      onSubmit={handleSubmit}
     >
       <label htmlFor="register-name">
         Name*
