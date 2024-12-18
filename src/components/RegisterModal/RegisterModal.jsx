@@ -35,8 +35,18 @@ const RegisterModal = ({ isOpen, onClose }) => {
         <input
           type="password"
           name="password"
-          id="password"
+          id="register-password"
           placeholder="Password"
+          className="modal__input"
+        />
+      </label>
+      <label htmlFor="register-confirm-password">
+        Confirm Password*
+        <input
+          type="password"
+          name="confirm-password"
+          id="register-confirm-password"
+          placeholder="Confirm Password"
           className="modal__input"
         />
       </label>

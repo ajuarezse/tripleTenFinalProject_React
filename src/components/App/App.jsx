@@ -10,7 +10,8 @@ import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
-  const [likedSongs, setLikedSongs] = useState({}); // Centralized state for liked songs
+  const [likedSongs, setLikedSongs] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleRegisterModal = (e) => {
     e.preventDefault();
@@ -26,7 +27,11 @@ function App() {
     setActiveModal("");
   };
 
-  // Function to toggle likes
+  const handleSignUp = () => {
+    setIsLoggedIn(true);
+    closeActiveModal;
+  };
+
   const handleLike = (id) => {
     setLikedSongs((prev) => ({
       ...prev,

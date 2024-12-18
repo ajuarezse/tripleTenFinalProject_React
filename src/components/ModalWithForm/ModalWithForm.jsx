@@ -9,6 +9,7 @@ function ModalWithForm({ isOpen, onClose, title, children }) {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
         onClose();
+        document.activeElement.blur();
       }
     };
     if (isOpen) {
