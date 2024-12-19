@@ -8,6 +8,7 @@ import Profile from "../Profile/Profile";
 import About from "../About/About";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import ItemModal from "../ItemModal/ItemModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
@@ -16,8 +17,12 @@ function App() {
   const [likedSongs, setLikedSongs] = useState({});
   //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+
   const navigate = useNavigate();
 
+  const handleCardClick = () => {
+    setActiveModal("view");
+  };
   const handleRegisterModal = (e) => {
     e.preventDefault();
     setActiveModal("register");
@@ -72,7 +77,13 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Main likedSongs={likedSongs} onLike={handleLike} />}
+              element={
+                <Main
+                  handleCardClick={handleCardClick}
+                  likedSongs={likedSongs}
+                  onLike={handleLike}
+                />
+              }
             />
             <Route
               path="/profile"
@@ -86,6 +97,7 @@ function App() {
           </Routes>
           <Footer />
         </div>
+        <ItemModal onClose={closeActiveModal} activeModal={activeModal} />
         <RegisterModal
           isOpen={activeModal === "register"}
           onClose={closeActiveModal}

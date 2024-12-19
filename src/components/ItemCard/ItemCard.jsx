@@ -1,9 +1,13 @@
 import React from "react";
 import "./ItemCard.css"; // Import CSS for styling
 
-function ItemCard({ title, lyrics, onLike, isLiked }) {
+function ItemCard({ title, lyrics, onLike, isLiked, onCardClick }) {
+  const handleCardClick = () => {
+    onCardClick();
+  };
+
   return (
-    <div className="item-card">
+    <div className="item-card" onClick={handleCardClick}>
       <div className="item-card__header">
         <h3 className="item-card__title">{title}</h3>
       </div>

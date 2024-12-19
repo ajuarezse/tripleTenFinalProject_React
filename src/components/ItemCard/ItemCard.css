@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 12px;
   max-width: 400px;
+  cursor: pointer;
 }
 
 .item-card__header {
