@@ -15,7 +15,7 @@ function Main({ likedSongs, onLike, handleCardClick }) {
             lyrics={song.verses[0].text} // Display first verse as preview
             isLiked={!!likedSongs[song.id]} // Check if the song is liked
             onLike={() => onLike(song.id)} // Pass like handler
-            onCardClick={handleCardClick}
+            onCardClick={() => handleCardClick(song)}
           />
         ))}
       </div>

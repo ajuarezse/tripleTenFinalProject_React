@@ -46,7 +46,6 @@ const RegisterModal = ({ isOpen, onClose, onSignUp, handleLoginModal }) => {
           id="register-password"
           placeholder="Password"
           className="modal__input"
-          j
           required
         />
       </label>

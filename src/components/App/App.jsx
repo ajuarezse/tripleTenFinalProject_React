@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
@@ -17,10 +17,12 @@ function App() {
   const [likedSongs, setLikedSongs] = useState({});
   //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const [selectedSong, setSelectedSong] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
+  const handleCardClick = (song) => {
+    setSelectedSong(song);
     setActiveModal("view");
   };
   const handleRegisterModal = (e) => {
@@ -35,6 +37,28 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+    setSelectedSong(null);
+  };
+
+  const handleEscape = useCallback((e) => {
+    if (e.key === "Escape") {
+      closeActiveModal();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeModal) {
+      document.addEventListener("keydown", handleEscape);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [activeModal, handleEscape]);
+
+  const handleOverlayClick = (e, modalContentRef) => {
+    if (modalContentRef && !modalContentRef.contains(e.target)) {
+      closeActiveModal();
+    }
   };
 
   const handleSignUp = () => {
@@ -97,18 +121,25 @@ function App() {
           </Routes>
           <Footer />
         </div>
-        <ItemModal onClose={closeActiveModal} activeModal={activeModal} />
+        <ItemModal
+          onClose={closeActiveModal}
+          activeModal={activeModal}
+          song={selectedSong}
+          handleOverlayClick={handleOverlayClick}
+        />
         <RegisterModal
           isOpen={activeModal === "register"}
           onClose={closeActiveModal}
           onSignUp={handleSignUp}
           handleLoginModal={handleLoginModal}
+          handleOverlayClick={handleOverlayClick}
         />
         <LoginModal
           isOpen={activeModal === "login"}
           onClose={closeActiveModal}
           handleRegisterModal={handleRegisterModal}
           onLogIn={handleLogIn}
+          handleOverlayClick={handleOverlayClick}
         />
       </CurrentUserContext.Provider>
     </>
