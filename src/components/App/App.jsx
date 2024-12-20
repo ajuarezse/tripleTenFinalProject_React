@@ -46,6 +46,13 @@ function App() {
     }
   }, []);
 
+  const handleBookmarkSaved = (songId) => {
+    setLikedSongs((prev) => ({
+      ...prev,
+      [songId]: !prev[songId],
+    }));
+  };
+
   useEffect(() => {
     if (activeModal) {
       document.addEventListener("keydown", handleEscape);
@@ -125,6 +132,8 @@ function App() {
           onClose={closeActiveModal}
           activeModal={activeModal}
           song={selectedSong}
+          likedSongs={likedSongs}
+          handleBookmarkSaved={handleBookmarkSaved}
           handleOverlayClick={handleOverlayClick}
         />
         <RegisterModal
