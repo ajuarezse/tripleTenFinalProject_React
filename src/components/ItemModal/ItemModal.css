@@ -6,3 +6,16 @@
   background-color: transparent;
   border: none;
 }
+
+.modal__lyrics-subtitle {
+  font-size: 0.75em;
+}
+
+.modal__lyric-container {
+  display: flex;
+}
+
+.modal__bookmark-button {
+  border: none;
+  background-color: transparent;
+}
