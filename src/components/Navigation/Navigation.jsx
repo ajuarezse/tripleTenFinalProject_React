@@ -41,15 +41,6 @@ function Navigation({ handleRegisterModal, handleLoginModal, handleLogOut }) {
           Main
         </Link>
       )}
-      {location.pathname !== "/profile" && (
-        <button
-          type="button"
-          className="navigation__button"
-          onClick={handleProfileClick}
-        >
-          Profile
-        </button>
-      )}
       {location.pathname !== "/about" && (
         <Link to="/about" className="navigation__button">
           About

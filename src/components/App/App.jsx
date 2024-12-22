@@ -116,6 +116,7 @@ function App() {
                 />
               }
             />
+            {/*
             <Route
               path="/profile"
               element={
@@ -124,6 +125,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            */}
             <Route path="/about" element={<About />} />
           </Routes>
           <Footer />
