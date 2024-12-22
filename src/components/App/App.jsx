@@ -4,18 +4,15 @@ import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
-import Profile from "../Profile/Profile";
 import About from "../About/About";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ItemModal from "../ItemModal/ItemModal";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [likedSongs, setLikedSongs] = useState({});
-  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [selectedSong, setSelectedSong] = useState(null);
 
@@ -72,7 +69,6 @@ function App() {
     //temp for simulating login
     //todo: pass real user objects for backend stage
     setCurrentUser(true);
-    navigate("/profile");
     closeActiveModal();
   };
 
@@ -80,7 +76,6 @@ function App() {
     //temp for simulating login
     //todo: pass real user objects for backend stage
     setCurrentUser(true);
-    navigate("/profile");
     closeActiveModal();
   };
 
@@ -116,16 +111,6 @@ function App() {
                 />
               }
             />
-            {/*
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute currentUser={currentUser}>
-                  <Profile likedSongs={likedSongs} />
-                </ProtectedRoute>
-              }
-            />
-            */}
             <Route path="/about" element={<About />} />
           </Routes>
           <Footer />

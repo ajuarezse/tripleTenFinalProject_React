@@ -4,17 +4,8 @@ import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Navigation({ handleRegisterModal, handleLoginModal, handleLogOut }) {
-  const navigate = useNavigate();
   const location = useLocation();
   const currentUser = useContext(CurrentUserContext);
-
-  const handleProfileClick = (e) => {
-    if (currentUser) {
-      navigate("/profile");
-    } else {
-      handleLoginModal(e);
-    }
-  };
 
   return (
     <nav className="navigation">
