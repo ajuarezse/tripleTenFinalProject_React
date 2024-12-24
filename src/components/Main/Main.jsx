@@ -1,7 +1,7 @@
 import React from "react";
 import "./Main.css";
 import { mockLyrics } from "../../data/mockLyrics";
-import ItemCard from "../ItemCard/ItemCard"; // Import ItemCard component
+import ItemCard from "../ItemCard/ItemCard";
 
 function Main({ likedSongs, onLike, handleCardClick }) {
   return (
@@ -13,8 +13,8 @@ function Main({ likedSongs, onLike, handleCardClick }) {
             key={song.id}
             title={song.title}
             lyrics={song.verses[0].text} // Display first verse as preview
-            isLiked={!!likedSongs[song.id]} // Check if the song is liked
-            onLike={() => onLike(song.id)} // Pass like handler
+            isLiked={!!likedSongs[song.id]}
+            onLike={() => onLike(song.id)}
             onCardClick={() => handleCardClick(song)}
           />
         ))}

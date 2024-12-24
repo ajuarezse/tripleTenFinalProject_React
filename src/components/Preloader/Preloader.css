@@ -1,3 +1,16 @@
+.circle-preloader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .circle-preloader {
   display: block;
   width: 50px;
@@ -5,12 +18,6 @@
   border: 4px solid #444;
   border-bottom-color: #888;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
   animation: spin 0.75s infinite linear;
 }
 

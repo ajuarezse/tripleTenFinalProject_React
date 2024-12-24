@@ -47,7 +47,7 @@ function BookmarkButton({ isSaved, onToggle }) {
         <img src={getIcon()} alt="Bookmark" className="bookmark-icon" />
       </button>
       {showTooltip && !currentUser && (
-        <span className="bookmark-tooltip">Log in to save</span>
+        <span className="bookmark-tooltip">Log in to bookmark</span>
       )}
     </div>
   );
