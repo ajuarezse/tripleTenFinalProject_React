@@ -14,7 +14,8 @@ function ItemCard({ title, lyrics, onCardClick }) {
         const tracks = await searchTracks(title);
         console.log("Fetched Tracks:", tracks);
         if (tracks && tracks.length > 0) {
-          const track = tracks[0]; // Use the first track
+          const randomIndex = Math.floor(Math.random() * tracks.length);
+          const track = tracks[randomIndex];
           setSpotifyLink(track.id); // Save the track ID for embedding
         }
       } catch (error) {
