@@ -6,7 +6,7 @@ function Header({ handleRegisterModal, handleLoginModal, handleLogOut }) {
   return (
     <header className="header">
       <Link to="/">
-        <div className="header__logo">Name of Project</div>
+        <div className="header__logo">Son Jarocho Songbook</div>
       </Link>
       <section className="header__navigation">
         <Navigation
