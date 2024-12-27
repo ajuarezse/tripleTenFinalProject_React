@@ -95,48 +95,51 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <div className="app">
-          <Header
-            handleRegisterModal={handleRegisterModal}
-            handleLoginModal={handleLoginModal}
-            handleLogOut={handleLogOut}
-          />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Main
-                  handleCardClick={handleCardClick}
-                  likedSongs={likedSongs}
-                  onLike={handleLike}
-                />
-              }
+          <div className="app__content">
+            <Header
+              handleRegisterModal={handleRegisterModal}
+              handleLoginModal={handleLoginModal}
+              handleLogOut={handleLogOut}
             />
-            <Route path="/about" element={<About />} />
-          </Routes>
-          <Footer />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Main
+                    handleCardClick={handleCardClick}
+                    likedSongs={likedSongs}
+                    onLike={handleLike}
+                  />
+                }
+              />
+              <Route path="/about" element={<About />} />
+            </Routes>
+            <Footer />
+          </div>
+
+          <ItemModal
+            onClose={closeActiveModal}
+            activeModal={activeModal}
+            song={selectedSong}
+            likedSongs={likedSongs}
+            handleBookmarkSaved={handleBookmarkSaved}
+            handleOverlayClick={handleOverlayClick}
+          />
+          <RegisterModal
+            isOpen={activeModal === "register"}
+            onClose={closeActiveModal}
+            onSignUp={handleSignUp}
+            handleLoginModal={handleLoginModal}
+            handleOverlayClick={handleOverlayClick}
+          />
+          <LoginModal
+            isOpen={activeModal === "login"}
+            onClose={closeActiveModal}
+            handleRegisterModal={handleRegisterModal}
+            onLogIn={handleLogIn}
+            handleOverlayClick={handleOverlayClick}
+          />
         </div>
-        <ItemModal
-          onClose={closeActiveModal}
-          activeModal={activeModal}
-          song={selectedSong}
-          likedSongs={likedSongs}
-          handleBookmarkSaved={handleBookmarkSaved}
-          handleOverlayClick={handleOverlayClick}
-        />
-        <RegisterModal
-          isOpen={activeModal === "register"}
-          onClose={closeActiveModal}
-          onSignUp={handleSignUp}
-          handleLoginModal={handleLoginModal}
-          handleOverlayClick={handleOverlayClick}
-        />
-        <LoginModal
-          isOpen={activeModal === "login"}
-          onClose={closeActiveModal}
-          handleRegisterModal={handleRegisterModal}
-          onLogIn={handleLogIn}
-          handleOverlayClick={handleOverlayClick}
-        />
       </CurrentUserContext.Provider>
     </>
   );
