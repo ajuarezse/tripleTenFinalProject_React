@@ -12,6 +12,12 @@
   background-image: linear-gradient(to right, white, #b6e2d3);
 }
 
+.item-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-color: #76c7b8;
+}
+
 .item-card__header {
   display: flex;
   justify-content: space-between;
