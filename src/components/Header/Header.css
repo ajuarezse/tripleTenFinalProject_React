@@ -19,6 +19,11 @@
   background: none;
   cursor: pointer;
   margin-left: 8px;
+  transition: transform 1s ease;
+}
+
+.header__title:hover {
+  transform: scale(1.1); /* Slightly enlarge the title */
 }
 
 .header__logo {
