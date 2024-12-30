@@ -10,6 +10,7 @@
   max-width: 395px;
   cursor: pointer;
   background-image: linear-gradient(to right, white, #b6e2d3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item-card:hover {
