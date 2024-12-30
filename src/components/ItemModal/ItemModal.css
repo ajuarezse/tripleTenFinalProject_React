@@ -5,6 +5,8 @@
   padding: 50px;
   position: relative;
   border: 50px solid rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .modal__close {
