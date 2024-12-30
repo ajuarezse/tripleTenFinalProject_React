@@ -1,3 +1,7 @@
+.modal__content {
+  background-color: #152d2e;
+}
+
 .modal__close-button {
   position: absolute;
   top: 20px;
@@ -9,12 +13,18 @@
 
 .modal__title {
   font-size: 1.5em;
+  color: white;
 }
 
 .modal__lyrics-subtitle {
   font-size: 0.75em;
+  color: white;
 }
 
 .modal__lyric-container {
   display: flex;
+}
+
+.modal__verse {
+  color: white;
 }
