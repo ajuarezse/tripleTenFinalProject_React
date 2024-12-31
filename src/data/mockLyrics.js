@@ -57,7 +57,7 @@ export const mockLyrics = [
       },
       {
         id: "2-2",
-        text: '¡Señores! ¿Qué son es éste? ¡Señores, "el buscapiés"! La primera vez que lo olgo Pero qué bonito es.',
+        text: '¡Señores! ¿Qué son es éste? ¡Señores, "el buscapiés"! La primera vez que lo oigo Pero qué bonito es.',
         notes: "Verse tied to the river's symbolism.",
         likes: 2,
         likedBy: [103],

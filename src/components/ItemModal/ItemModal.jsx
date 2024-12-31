@@ -29,7 +29,8 @@ function ItemModal({
             className="modal__close_button"
           />
         </button>
-        <h2 className="modal__title">Lyrics for: {title}</h2>
+        <h2 className="modal__title">Lyrics for:</h2>
+        <h2 className="modal__title-song">{title}</h2>
         <div className="modal__lyrics">
           <h3 className="modal__lyrics-subtitle">Verses:</h3>
           {verses.length > 0 ? (
