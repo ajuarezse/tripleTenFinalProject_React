@@ -1,0 +1,31 @@
+.about {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.about__section {
+  background-color: white;
+  border-radius: 25px;
+}
+
+.about__title {
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.about__paragraph {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.about__image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
