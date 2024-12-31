@@ -1,9 +1,31 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(../../vendor/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 .footer__container {
   display: flex;
-  font-family: "CabinetGrotesk", sans-serif;
-  justify-content: space-between;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  justify-content: flex-start;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.3em;
   line-height: 20px;
   margin-top: 85px;
+  color: #b6e2d3;
+}
+
+.footer__social-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+.footer__logo {
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer__logo:hover {
+  transform: scale(1.2);
 }
