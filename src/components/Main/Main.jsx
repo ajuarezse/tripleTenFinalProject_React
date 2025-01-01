@@ -6,9 +6,9 @@ import ItemCard from "../ItemCard/ItemCard";
 function Main({ likedSongs, onLike, handleCardClick }) {
   return (
     <main className="main">
-      <h1 className="main__title">Main page headline goes here with words</h1>
+      <h1 className="main__title">Welcome to the Son Jarocho Songbook!</h1>
       <h2 className="main__subtitle">
-        Subtitle with instructions will go here with user guidance
+        Click on a card below and browse the lyrics!
       </h2>
       <div className="main__songs-list">
         {mockLyrics.map((song) => (

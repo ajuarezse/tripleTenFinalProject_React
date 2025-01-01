@@ -6,20 +6,26 @@ import "./ItemCard.css";
 function ItemCard({ title, lyrics, onCardClick }) {
   const [spotifyLink, setSpotifyLink] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchSpotifyData() {
+      setIsLoading(true);
+      setError(null);
       try {
-        setIsLoading(true);
         const tracks = await searchTracks(title);
         console.log("Fetched Tracks:", tracks);
         if (tracks && tracks.length > 0) {
           const randomIndex = Math.floor(Math.random() * tracks.length);
           const track = tracks[randomIndex];
           setSpotifyLink(track.id); // Save the track ID for embedding
+        } else {
+          setSpotifyLink(null);
         }
-      } catch (error) {
-        console.error("Error fetching Spotify data:", error);
+      } catch (err) {
+        setError(
+          "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+        );
       } finally {
         setIsLoading(false);
       }
@@ -37,6 +43,8 @@ function ItemCard({ title, lyrics, onCardClick }) {
         <p className="item-card__lyrics">{lyrics}</p>
         {isLoading ? (
           <Preloader />
+        ) : error ? (
+          <p className="item-card__error">{error}</p>
         ) : spotifyLink ? (
           <iframe
             src={`https://open.spotify.com/embed/track/${spotifyLink}`}

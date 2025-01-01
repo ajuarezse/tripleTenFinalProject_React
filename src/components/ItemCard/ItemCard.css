@@ -44,3 +44,10 @@
 .item-card__lyrics {
   font-size: 2em;
 }
+
+.item-card__error {
+  color: red;
+  font-size: 0.9em;
+  text-align: center;
+  margin: 10px 0;
+}
