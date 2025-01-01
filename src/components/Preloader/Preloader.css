@@ -9,6 +9,7 @@
   right: 0;
   bottom: 0;
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .circle-preloader {
@@ -22,7 +23,6 @@
 }
 
 .text-preloader {
-  margin-top: 1rem;
   font-size: 1.2rem;
 }
 

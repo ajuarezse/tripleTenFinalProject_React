@@ -34,6 +34,7 @@
 .item-card__content {
   font-size: 0.95rem;
   color: #444;
+  position: relative;
 }
 
 .item-card__actions {
