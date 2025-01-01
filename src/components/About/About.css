@@ -1,6 +1,5 @@
 .about {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,22 +9,36 @@
 }
 
 .about__section {
-  background-color: white;
+  background-color: transparent;
   border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about__description {
+  display: flex;
+  flex-direction: column;
+  margin: 56px;
+  background-color: #b6e2d3;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .about__title {
-  font-size: 1.7em;
+  font-size: 2.7em;
   font-weight: 500;
+  margin: auto;
 }
 
 .about__paragraph {
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: 400;
 }
 
 .about__image {
-  height: 40px;
-  width: 40px;
-  border-radius: 50px;
+  height: 400px;
+  min-width: 400px;
+  border-radius: 50%;
+  padding: 15px;
 }
