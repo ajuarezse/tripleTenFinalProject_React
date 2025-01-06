@@ -54,3 +54,25 @@
   text-align: center;
   margin: 10px 0;
 }
+
+@media (max-width: 480px) {
+  .item-card {
+    padding: 8px;
+    border-radius: 15px;
+    flex-direction: column;
+    margin: 10px 0;
+  }
+
+  .item-card__title {
+    font-size: 1.4rem;
+    writing-mode: horizontal-tb;
+  }
+
+  .item-card__lyrics {
+    font-size: 0.8rem;
+  }
+
+  .item-card__player {
+    width: 260px;
+  }
+}
