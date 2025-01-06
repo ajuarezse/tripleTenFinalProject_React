@@ -23,7 +23,7 @@ function About() {
           </p>
         </div>
       </section>
-      <section className="about__section">
+      <section className="about__section about__section_author">
         <div className="about__description">
           <h2 className="about__title">About the author</h2>
           <p className="about__paragraph">

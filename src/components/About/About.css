@@ -69,3 +69,13 @@
     min-width: 300px;
   }
 }
+
+@media (max-width: 480px) {
+  .about__section {
+    flex-direction: column;
+  }
+
+  .about__section_author {
+    flex-direction: column-reverse;
+  }
+}
