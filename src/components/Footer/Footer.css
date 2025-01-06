@@ -31,3 +31,14 @@
 .footer__logo:hover {
   transform: scale(1.2);
 }
+
+@media (max-width: 480px) {
+  .footer__container {
+    flex-wrap: wrap;
+    font-size: 0.8em;
+  }
+
+  .footer__social-links {
+    gap: 30px;
+  }
+}

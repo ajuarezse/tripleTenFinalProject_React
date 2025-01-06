@@ -21,3 +21,10 @@
   background-color: black;
   color: white;
 }
+
+@media (max-width: 480px) {
+  .navigation__button {
+    font-size: 0.7em;
+    margin: 0;
+  }
+}

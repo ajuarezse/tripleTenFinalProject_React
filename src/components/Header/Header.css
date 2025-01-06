@@ -25,7 +25,7 @@
 }
 
 .header__title:hover {
-  transform: scale(1.1); /* Slightly enlarge the title */
+  transform: scale(1.1);
 }
 
 .header__logo {
@@ -48,4 +48,16 @@
   line-height: 24.8px;
   background: none;
   border: none;
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header__title {
+    font-size: 1em;
+    font-weight: 700;
+  }
 }
