@@ -27,3 +27,15 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+@media (max-width: 480px) {
+  .main__title {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .main__subtitle {
+    font-size: 0.9em;
+    text-align: center;
+  }
+}
