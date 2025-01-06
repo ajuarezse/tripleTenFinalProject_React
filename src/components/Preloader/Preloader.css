@@ -20,6 +20,7 @@
   border-bottom-color: #888;
   border-radius: 50%;
   animation: spin 0.75s infinite linear;
+  box-sizing: border-box;
 }
 
 .text-preloader {
@@ -29,5 +30,12 @@
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .circle-preloader {
+    height: 35px;
+    width: 35px;
   }
 }

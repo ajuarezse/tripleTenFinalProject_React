@@ -44,6 +44,7 @@
   }
 
   .bookmark-tooltip {
-    left: -20px;
+    left: -30px;
+    padding: 5px 10px;
   }
 }

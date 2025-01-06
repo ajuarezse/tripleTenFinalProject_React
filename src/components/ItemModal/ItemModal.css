@@ -69,7 +69,7 @@
 
 @media (max-width: 480px) {
   .modal__content {
-    padding: 20px;
+    padding: 20px 8px;
     max-height: 80vh;
     width: 90%;
     margin: auto;
