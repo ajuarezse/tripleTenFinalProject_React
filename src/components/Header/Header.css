@@ -6,6 +6,8 @@
   padding: 10px 15px;
   border-radius: 15px;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  border-top: double;
+  border-bottom: double;
 }
 
 .header__title {

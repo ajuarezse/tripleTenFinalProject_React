@@ -30,9 +30,9 @@ function About() {
             Hi! I'm Angel, a student software developer who loves building cool
             projects. I grew up playing Son Jarocho music in Southern
             California, and I'm passionate about sharing my love for this
-            vibrant tradition. When I'm not coding or playing music, you can
-            find me challenging my friends to a chess match. I'm excited to
-            share my love for Son Jarocho with you through this project.
+            vibrant tradition. When I'm not coding, you can find me playing
+            music or chess with my friends. I'm excited to share my love for Son
+            Jarocho with you through this project.
           </p>
         </div>
         <img src={myPhoto} alt="Photo of Author" className="about__image" />

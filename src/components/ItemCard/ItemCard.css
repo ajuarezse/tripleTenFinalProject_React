@@ -9,7 +9,8 @@
   gap: 12px;
   max-width: 395px;
   cursor: pointer;
-  background-image: linear-gradient(to right, white, #b6e2d3);
+  /*background-image: linear-gradient(to right, white, #b6e2d3);*/
+  background-color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -27,7 +28,7 @@
 
 .item-card__title {
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 3rem;
   writing-mode: tb;
 }
 
@@ -44,6 +45,7 @@
 
 .item-card__lyrics {
   font-size: 2em;
+  text-align: end;
 }
 
 .item-card__error {
