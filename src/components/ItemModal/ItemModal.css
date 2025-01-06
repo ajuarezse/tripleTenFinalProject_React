@@ -66,3 +66,38 @@
   color: #152d2e;
   margin: 23px -2px;
 }
+
+@media (max-width: 480px) {
+  .modal__content {
+    padding: 20px;
+    max-height: 80vh;
+    width: 90%;
+    margin: auto;
+  }
+
+  .modal__title {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .modal__title-song {
+    font-size: 1.5em;
+  }
+
+  .modal__lyrics-subtitle {
+    font-size: 0.7em;
+  }
+
+  .modal__lyrics {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .modal__verse {
+    margin: 4px 0px;
+  }
+
+  .modal__lyric-container {
+    margin-bottom: 15px;
+  }
+}

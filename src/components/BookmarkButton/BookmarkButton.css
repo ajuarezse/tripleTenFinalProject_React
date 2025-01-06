@@ -36,3 +36,14 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+@media (max-width: 480px) {
+  .bookmark-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bookmark-tooltip {
+    left: -20px;
+  }
+}

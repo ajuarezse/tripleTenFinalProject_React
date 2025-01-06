@@ -55,6 +55,29 @@
   margin: 10px 0;
 }
 
+@media (max-width: 768px) {
+  .item-card {
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 12px;
+  }
+
+  .item-card__title {
+    font-size: 1.6rem;
+  }
+
+  .item-card__lyrics {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .item-card__content {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+  }
+}
+
 @media (max-width: 480px) {
   .item-card {
     padding: 8px;
