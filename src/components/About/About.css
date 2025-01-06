@@ -73,6 +73,26 @@
 @media (max-width: 480px) {
   .about__section {
     flex-direction: column;
+    padding: 10px;
+  }
+
+  .about__description {
+    margin: 15px;
+    padding: 10px;
+    width: 240px;
+  }
+
+  .about__title {
+    font-size: 1.8em;
+  }
+
+  .about__paragraph {
+    font-size: 1em;
+  }
+
+  .about__image {
+    height: 200px;
+    min-width: 200px;
   }
 
   .about__section_author {
