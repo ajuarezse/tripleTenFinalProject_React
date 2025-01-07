@@ -103,7 +103,7 @@ function App() {
             />
             <Routes>
               <Route
-                path="/"
+                path="/tripleTenFinalProject_React/"
                 element={
                   <Main
                     handleCardClick={handleCardClick}
