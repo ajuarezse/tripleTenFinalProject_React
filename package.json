@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ajuarezse.github.io/tripleTenFinalProject_React/",
+  "homepage": "https://ajuarezse.github.io/tripleTenFinalProject_React",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
