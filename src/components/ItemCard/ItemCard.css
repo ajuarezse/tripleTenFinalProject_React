@@ -1,0 +1,101 @@
+.item-card {
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0);
+  padding: 16px;
+  margin: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  max-width: 395px;
+  cursor: pointer;
+  /*background-image: linear-gradient(to right, white, #b6e2d3);*/
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-color: #76c7b8;
+}
+
+.item-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-card__title {
+  margin: 0;
+  font-size: 3rem;
+  writing-mode: tb;
+}
+
+.item-card__content {
+  font-size: 0.95rem;
+  color: #444;
+  position: relative;
+}
+
+.item-card__actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.item-card__lyrics {
+  font-size: 2em;
+  text-align: end;
+}
+
+.item-card__error {
+  color: red;
+  font-size: 0.9em;
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .item-card {
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 12px;
+  }
+
+  .item-card__title {
+    font-size: 1.6rem;
+  }
+
+  .item-card__lyrics {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .item-card__content {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-card {
+    padding: 8px;
+    border-radius: 15px;
+    flex-direction: column;
+    margin: 10px 0;
+  }
+
+  .item-card__title {
+    font-size: 1.4rem;
+    writing-mode: horizontal-tb;
+  }
+
+  .item-card__lyrics {
+    font-size: 0.8rem;
+  }
+
+  .item-card__player {
+    width: 260px;
+  }
+}

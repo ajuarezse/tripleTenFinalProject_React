@@ -1,0 +1,42 @@
+.main {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.main__title {
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  background-color: #b6e2d3;
+  border-radius: 10px;
+  font-size: 2.5em;
+  border-bottom: double;
+}
+
+.main__subtitle {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  background-color: #b6e2d3;
+  width: fit-content;
+  margin: auto;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.main__songs-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 480px) {
+  .main__title {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .main__subtitle {
+    font-size: 0.9em;
+    text-align: center;
+  }
+}

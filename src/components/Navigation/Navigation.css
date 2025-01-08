@@ -1,0 +1,30 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.navigation__button {
+  color: #000;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 24.8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+
+.navigation__button:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .navigation__button {
+    font-size: 0.7em;
+    margin: 0;
+  }
+}

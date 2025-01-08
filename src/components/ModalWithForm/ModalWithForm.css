@@ -1,0 +1,144 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "CabinetGrotesk", sans-serif;
+  visibility: hidden;
+}
+
+.modal__opened {
+  visibility: visible;
+}
+
+.modal__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+
+.modal__label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__label_error {
+  color: red;
+}
+
+.modal__label_text {
+  margin-bottom: 8px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+}
+
+.modal__content {
+  background-color: white;
+  position: relative;
+  padding: 28px 28px 36px;
+  max-width: 498px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.modal__content_type_image {
+  position: fixed;
+  align-items: center;
+  padding: 0;
+  border-radius: 16px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 16px;
+  padding: 8px 0px 4px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__input_error {
+  border: none;
+  border-bottom: 1px solid red;
+  color: red;
+}
+
+.modal__legend {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.modal__button-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.modal__submit {
+  background: #0000004d;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #fff;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.modal__submit_enabled {
+  background-color: black;
+}
+
+.modal__submit:hover {
+  background-color: #616161;
+}
+
+.modal__image {
+  min-width: 498px;
+  padding: 0;
+}
+
+.modal__switch-button {
+  background: none;
+  color: #808080;
+  border: none;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.modal__switch-button_enabled {
+  background: black;
+}
+
+@media (max-width: 480px) {
+  .modal__form {
+    font-size: 1em;
+    padding: 8px;
+  }
+}

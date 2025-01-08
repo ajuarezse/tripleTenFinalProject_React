@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(../../vendor/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+.modal__content {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  /*background-image: linear-gradient(to right, #b6e2d3, white);*/
+  border-radius: 30px;
+  box-shadow: 0 38px 0px rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  position: relative;
+  /*border: 20px solid rgba(0, 0, 0, 0.3);*/
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal__close {
+  background-color: transparent;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.modal__title {
+  font-size: 1.5em;
+  color: #152d2e;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__title-song {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: auto;
+}
+
+.modal__lyrics-subtitle {
+  font-size: 0.75em;
+  color: #152d2e;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__lyrics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.modal__lyric-container {
+  display: flex;
+  align-items: center;
+}
+
+.modal__verse {
+  color: #152d2e;
+  margin: 23px -2px;
+}
+
+@media (max-width: 480px) {
+  .modal__content {
+    padding: 20px 8px;
+    max-height: 80vh;
+    width: 90%;
+    margin: auto;
+  }
+
+  .modal__title {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .modal__title-song {
+    font-size: 1.5em;
+  }
+
+  .modal__lyrics-subtitle {
+    font-size: 0.7em;
+  }
+
+  .modal__lyrics {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .modal__verse {
+    margin: 4px 0px;
+  }
+
+  .modal__lyric-container {
+    margin-bottom: 15px;
+  }
+}
