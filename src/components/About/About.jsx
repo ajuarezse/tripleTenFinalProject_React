@@ -1,6 +1,5 @@
 import "./About.css";
 import musicPhoto from "../../assets/jarochoInstruments.jpg";
-import myPhoto from "../../assets/profilePhoto.jpg";
 
 function About() {
   return (
